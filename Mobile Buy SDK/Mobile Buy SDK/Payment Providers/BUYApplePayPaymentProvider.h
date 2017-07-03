@@ -65,15 +65,6 @@ extern NSString *const BUYApplePayPaymentProviderId;
  */
 @property (nonatomic, assign) BOOL allowApplePaySetup;
 
-/**
- *  Whether the device is setup to show the Apple Pay setup sheet.
- *  `allowApplePaySetup` must be set to YES, and the `merchantId` must also be set in addition to the
- *  device settings for this method to return YES.
- *
- *  @return YES if the Setup Apple Pay button should be shown
- */
-- (BOOL)canShowApplePaySetup;
-
 @end
 
 NS_ASSUME_NONNULL_END

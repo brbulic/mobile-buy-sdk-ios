@@ -171,18 +171,6 @@ typedef void (^BUYShippingMethodCompletion)(PKPaymentAuthorizationStatus, NSArra
 			[self canMakePaymentsUsingNetworks:self.supportedNetworks]);
 }
 
-- (BOOL)canShowApplePaySetup
-{
-	PKPassLibrary *passLibrary = [[PKPassLibrary alloc] init];
-	if ([passLibrary respondsToSelector:@selector(canAddPaymentPassWithPrimaryAccountIdentifier:)] &&
-		// Check if the device can add a payment pass
-		[self.merchantID length]) {
-		return [self canMakePayments];
-	} else {
-		return NO;
-	}
-}
-
 - (BOOL)canMakePayments
 {
 	return [self.applePayControllerClass canMakePayments];
